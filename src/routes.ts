@@ -13,6 +13,7 @@ import { CreateProductController } from "./controllers/product/CreateProductCont
 import uploadConfig from "./config/multer";
 import { ListByCategoryController } from "./controllers/product/ListByCategoryController";
 import { CreateOrderController } from "./controllers/order/CreateOrderController";
+import { RemoverOrderController } from "./controllers/order/RemoverOrderController";
 
 const router = Router();
 
@@ -46,5 +47,6 @@ router.get(
 
 //-- ROTAR ORDER --
 router.post("/order", isAuthenticated, new CreateOrderController().handle);
+router.delete("/order", isAuthenticated, new RemoverOrderController().handle);
 
 export { router };
